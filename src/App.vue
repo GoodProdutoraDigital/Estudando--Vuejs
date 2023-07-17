@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Header :logged="true"/>
+    <h1 class="p-pai">Seja bem vindo ao {{ title }}</h1>
+    <FirstCompVue />
+    <LifeCycle />
+    <Registro />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FirstCompVue from './components/FirstComp.vue';
+import LifeCycle from './components/LifeCycle.vue';
+import Registro from './components/Registro.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    FirstCompVue,
+    LifeCycle,
+    Registro
+  },
+  data() {
+    return {
+      title: 'VueJS'
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* Global style */
+body{
+  background-color: #333;
+  color: #fff
+}
+a{
+  color: brown;
+}
+.img-size{  
+  width: 100px;
 }
 </style>
